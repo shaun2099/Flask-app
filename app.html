@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue@3.0.2"></script>
+	<style>
+		.box {
+			padding: 100px 0;
+			width: 400px;
+			text-align: center;
+			background-color: #ddd;
+			margin: 20px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p v-if="age%2 == 0">{{ title }} - {{author}} - {{age}}</p>
+		<button v-on:click="age++">Increase age</button>
+		<button @click="age--">Decrease age</button>
+		<button @click="changeTitle">Change Title</button>
+		<br>
+		<div class="box" @mouseover="handleEvent"></div>
+		<div class="box" @mouseleave="handleEvent"></div>
+		<div class="box" @dblclick="handleEvent"></div>
+		<div class="box"></div>
+		<br>
+		<a v-bind:href="url">Google</a>
+		<a :href="url">Google</a>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
